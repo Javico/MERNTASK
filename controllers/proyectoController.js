@@ -6,6 +6,7 @@ exports.crearProyecto = async (req, res) => {
     const errores = validationResult(req);
 
     if(!errores.isEmpty()){
+        console.log('algo ocurrio');
         return res.status(400).json({ errores : errores.array() })
     }
 
