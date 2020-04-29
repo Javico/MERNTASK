@@ -28,7 +28,7 @@ router.put('/:id',
 )
 
 // Eliminar tarea
-router.put('/:id',
+router.delete('/:id',
     auth,
     tareaController.eliminarTarea
 )

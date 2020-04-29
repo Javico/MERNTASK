@@ -71,6 +71,7 @@ exports.actualizarTarea = async (req, res) => {
         const {proyecto, nombre, estado} = req.body;
 
         // Si la tarea existe o no
+        //console.log(req.params.id);
         let existeTarea = await Tarea.findById(req.params.id);
 
         if(!existeTarea){
@@ -112,6 +113,7 @@ exports.eliminarTarea = async (req, res) => {
     try {
         // Extraer el proyecto y comprobar si existe
         const {proyecto} = req.query;
+        //console.log(req.query);
 
         // Si la tarea existe o no
         let existeTarea = await Tarea.findById(req.params.id);
