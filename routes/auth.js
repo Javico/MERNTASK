@@ -7,6 +7,12 @@ const auth = require('./middleware/auth');
 
 // Iniciar sesion
 // api/auth
+// Obtiene el usuario autenticado
+router.get('/',
+    auth,
+    authController.usuarioAuthenticado
+)
+
 router.post('/',
     // [
     //     check('email', 'Agrega un email valido').isEmail(),
@@ -14,12 +20,6 @@ router.post('/',
     // ]
     // ,
     authController.autenticarUsuario
-)
-
-// Obtiene el usuario autenticado
-router.get('/',
-    auth,
-    authController.usuarioAuthenticado
 )
 
 module.exports = router;
